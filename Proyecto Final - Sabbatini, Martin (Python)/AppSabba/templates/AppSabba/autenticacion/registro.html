@@ -1,0 +1,26 @@
+{% extends "AppSabba/padre.html" %} 
+
+{% block titulo %}
+<header style="background-image: url(../../../static/AppSabba/assets/img/header-bg.jpg);" class="masthead ">
+    <div class="container">
+        <div class="masthead-heading text-uppercase">Registrarse</div>
+    </div>
+</header>
+{% endblock %} 
+
+
+{% block listas %}
+
+<form style="padding: 15px" action="" method="POST"> {% csrf_token %}
+    
+    <table>
+        {{formulario1.as_table}}
+    </table>
+    
+    <div style="padding: 15px">
+        <input style="background-color: red; border-color: black; color: white; border-radius: 3px; font-weight: bold;" 
+        type = "submit" value="Crear Nuevo Usuario">
+    </div>
+</form>
+                
+{% endblock %}

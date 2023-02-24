@@ -1,0 +1,62 @@
+{% extends "AppSabba/padre.html" %} 
+
+{% block titulo %}
+<header style="background-image: url(../../../static/AppSabba/assets/img/header-bg2.jpg);" class="masthead ">
+    <div class="container">
+        <div class="masthead-heading text-uppercase">Lista de Pilotos</div>
+    </div>
+</header>
+{% endblock %} 
+
+{% block listas %}
+<div style="padding: 10px;">
+    <button style="background-color: rgb(255, 0, 0); border-radius: 3px;"> 
+        <a style="text-decoration: none; color: rgb(255, 255, 255); font-weight:bold ;" href="{% url 'Crear Pilotos' %}">Nuevo Piloto</a>
+    </button>
+    <button style="background-color: rgb(255, 0, 0); border-radius: 3px;"> 
+        <a style="text-decoration: none; color: rgb(255, 255, 255); font-weight:bold ;" href="{% url 'Buscar Piloto' %}">Buscar Piloto</a>
+    </button>
+</div>
+
+<table class="table" style="border-color: black; padding: 10px;">
+    
+    <thead >
+      <tr style="text-align: center; font-weight: bold;">
+        <th scope="col" style="font-weight: bold;">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Nacionalidad</th>
+        <th scope="col">Marca Vehiculo</th>
+        <th scope="col">Modelo Vehiculo</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+        {% for pilot in object_list %}
+
+        <tr style="text-align: center;">
+            <th scope="row">{{pilot.id}}</th>
+            <td>{{pilot.nombre}}</td>
+            <td>{{pilot.apellido}}</td>
+            <td>{{pilot.edad}}</td>
+            <td>{{pilot.nacionalidad}}</td>
+            <td>{{pilot.marca_vehiculo}}</td>
+            <td>{{pilot.modelo_vehiculo}}</td>
+
+            <td>
+                <button style="background-color: rgb(255, 0, 0); border-radius: 3px;"> 
+                    <a style="text-decoration: none; color: rgb(255, 255, 255); font-weight:bold ;" href="{% url 'Editar Pilotos' pilot.id %}">Editar Piloto</a>
+                </button>
+                <button style="background-color: rgb(255, 0, 0); border-radius: 3px;">
+                    <a style="text-decoration: none; color: rgb(255, 255, 255); font-weight:bold ;" href="{% url 'Borrar Pilotos' pilot.id %}">Borrar Piloto</a>
+                </button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+
+
+{% endblock %}

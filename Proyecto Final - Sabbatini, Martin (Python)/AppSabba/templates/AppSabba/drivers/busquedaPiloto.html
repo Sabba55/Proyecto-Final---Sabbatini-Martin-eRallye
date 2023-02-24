@@ -1,0 +1,26 @@
+{% extends "AppSabba/padre.html" %}
+
+{% block titulo %}
+<header style="background-image: url(../../../static/AppSabba/assets/img/header-bg2.jpg);" class="masthead ">
+    <div class="container">
+        <div class="masthead-heading text-uppercase"></div>
+    </div>
+</header>
+{% endblock %} 
+
+
+{% block listas %}
+<form style="padding-bottom: 15px;" action="/AppSabba/resultados_piloto/" method="GET">
+
+    <p style="padding: 15px;">
+        Ingresar el apellido del piloto:
+        <input style="text-align: center;" type="text" name="apellido"> 
+    </p>
+
+    <input style="border-color: black; border-radius: 3px;
+    color: white; background-color: red; font-weight: bold;" type="submit" value="Buscar">
+
+</form>
+
+{% endblock %} 
+

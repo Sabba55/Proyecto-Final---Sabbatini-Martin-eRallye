@@ -1,0 +1,47 @@
+{% extends "AppSabba/padre.html" %}
+
+{% block titulo %}
+<header style="background-image: url(../../../static/AppSabba/assets/img/header-bg2.jpg);" class="masthead ">
+    <div class="container">
+        <div class="masthead-heading text-uppercase">Resultados de busqueda</div>
+    </div>
+</header>
+{% endblock %} 
+
+
+{% block listas %}
+
+
+<table class="table" style="border-color: black; padding: 15px;">
+    
+    <thead >
+      <tr style="text-align: center; font-weight: bold;">
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Nacionalidad</th>
+        <th scope="col">Marca Vehiculo</th>
+        <th scope="col">Modelo Vehiculo</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+        {% for x in resultado %}
+
+        <tr style="text-align: center;">
+            <td>{{x.nombre}}</td>
+            <td>{{x.apellido}}</td>
+            <td>{{x.edad}}</td>
+            <td>{{x.nacionalidad}}</td>
+            <td>{{x.marca_vehiculo}}</td>
+            <td>{{x.modelo_vehiculo}}</td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %} 
+
+

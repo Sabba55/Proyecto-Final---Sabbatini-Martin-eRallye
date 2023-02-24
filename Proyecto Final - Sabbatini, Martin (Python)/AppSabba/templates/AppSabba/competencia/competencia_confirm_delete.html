@@ -1,0 +1,25 @@
+{% extends "AppSabba/padre.html" %}
+
+{% block titulo %}
+<header style="background-image: url(../../../static/AppSabba/assets/img/header-bg3.jpg);" class="masthead ">
+    <div class="container">
+        <div class="masthead-heading text-uppercase"></div>
+    </div>
+</header>
+{% endblock %} 
+
+
+{% block listas %}
+
+<div class="container" style="padding: 25px;"> 
+    <form class="container" style="display: flex; align-items: center; text-align: center;" action="" method="post"> {% csrf_token %}
+
+        ¿Estas seguro que deseas borrar "{{object.nombre}}?
+        <div style="padding: 10px;">
+            <input style="background-color: red; border-color: black; left: 10px; color: white; border-radius: 2px;" type="submit" value="Aceptar">  
+        </div>
+        
+    </form>
+</div>
+
+{% endblock %} 

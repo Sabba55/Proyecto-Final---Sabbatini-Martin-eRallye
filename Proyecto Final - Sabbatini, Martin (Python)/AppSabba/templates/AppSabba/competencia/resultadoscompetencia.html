@@ -1,0 +1,51 @@
+{% extends "AppSabba/padre.html" %}
+
+{% block titulo %}
+<header style="background-image: url(../../../static/AppSabba/assets/img/header-bg3.jpg);" class="masthead ">
+    <div class="container">
+        <div class="masthead-heading text-uppercase">Resultados de busqueda</div>
+    </div>
+</header>
+{% endblock %} 
+
+
+{% block listas %}
+    {% for x in resultado %}
+    <div style="padding: 15px;">
+        <div style="display: flex;">
+            <div>
+                <img style="width: 180px; height: 100px;max-width: 200px; max-height: 200px;" src="../../../static/AppSabba/assets/img/totoral22.png" alt="">
+                {{x.image}}
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center; padding-left: 15px;">
+                <h2>{{x.nombre}}</h2>
+            </div>
+        </div>
+
+        <table class="table" style="border-color: black; padding: 10px;">
+        
+            <thead >
+            <tr style="text-align: center; font-weight: bold;">
+                <th scope="col">Nacionalidad</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Inscriptos</th>
+                <th scope="col">Kms</th>
+            </tr>
+            </thead>
+        
+            <tbody>
+                <tr style="text-align: center;">
+                    <td>{{x.nacionalidad}}</td>
+                    <td>{{x.state}}</td>
+                    <td>{{x.fecha}}</td>
+                    <td>{{x.inscriptos}}</td>
+                    <td>{{x.kilometraje}} km</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    {% endfor %}
+{% endblock %} 

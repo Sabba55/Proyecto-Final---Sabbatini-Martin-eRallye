@@ -1,0 +1,59 @@
+{% extends "AppSabba/padre.html" %} 
+
+{% block titulo %}
+<header style="background-image: url(../../../static/AppSabba/assets/img/header-bg1.jpg);" class="masthead ">
+    <div class="container">
+        <div class="masthead-heading text-uppercase">Lista de Co-Pilotos</div>
+    </div>
+</header>
+{% endblock %} 
+
+
+
+
+{% block listas %}
+<div style="padding: 10px;">
+    <button style="background-color: rgb(255, 0, 0); border-radius: 3px;"> 
+        <a style="text-decoration: none; color: rgb(255, 255, 255); font-weight:bold ;" href="{% url 'Crear Copilotos' %}">Nuevo Copiloto</a>
+    </button>
+    <button style="background-color: rgb(255, 0, 0); border-radius: 3px;"> 
+        <a style="text-decoration: none; color: rgb(255, 255, 255); font-weight:bold ;" href="{% url 'Buscar Copiloto' %}">Buscar Copiloto</a>
+    </button>
+</div>
+
+<table class="table" style="border-color: black; padding: 10px;">
+    
+    <thead >
+      <tr style="text-align: center; font-weight: bold;">
+        <th scope="col" style="font-weight: bold;">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Nacionalidad</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        {% for x in object_list %}
+
+        <tr style="text-align: center;">
+            <th scope="row">{{x.id}}</th>
+            <td>{{x.nombre}}</td>
+            <td>{{x.apellido}}</td>
+            <td>{{x.edad}}</td>
+            <td>{{x.nacionalidad}}</td>
+            <td>
+                <button style="background-color: rgb(255, 0, 0); border-radius: 3px;"> 
+                    <a style="text-decoration: none; color: rgb(255, 255, 255); font-weight:bold ;" href="{% url 'Editar Copilotos' x.id %}">Editar Copiloto</a>
+                </button>
+                <button style="background-color: rgb(255, 0, 0); border-radius: 3px;">
+                    <a style="text-decoration: none; color: rgb(255, 255, 255); font-weight:bold ;" href="{% url 'Borrar Copilotos' x.id %}">Borrar Copiloto</a>
+                </button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+
+
+{% endblock %}

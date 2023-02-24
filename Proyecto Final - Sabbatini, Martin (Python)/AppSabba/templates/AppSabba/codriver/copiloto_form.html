@@ -1,0 +1,27 @@
+{% extends "AppSabba/padre.html" %} 
+
+
+{% block titulo %}
+<header style="background-image: url(../../../static/AppSabba/assets/img/header-bg1.jpg);" class="masthead ">
+    <div class="container">
+        <div class="masthead-heading text-uppercase">Nuevo Co-Piloto</div>
+    </div>
+</header>
+{% endblock %} 
+
+
+{% block listas %}
+<div style="display: flex; flex-direction: row; justify-content: center;">
+    <form style="padding: 20px;" action="" method="POST" > {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+
+        <div style="display: flex; flex-direction: row; justify-content: center; padding: 20px;">
+            <input style="background-color: red; border-color: black;" type="submit" value="Enviar" class="btn btn-success">
+            <input style="background-color: red; border-color: black;" type="reset" value="Resetear" class="btn btn-success">
+        </div>
+    </form>
+</div>    
+                
+{% endblock %}

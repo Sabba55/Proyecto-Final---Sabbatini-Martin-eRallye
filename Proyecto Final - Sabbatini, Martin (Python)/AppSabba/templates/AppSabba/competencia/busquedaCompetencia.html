@@ -1,0 +1,25 @@
+{% extends "AppSabba/padre.html" %}
+
+{% block titulo %}
+<header style="background-image: url(../../../static/AppSabba/assets/img/header-bg3.jpg);" class="masthead ">
+    <div class="container">
+        <div class="masthead-heading text-uppercase"></div>
+    </div>
+</header>
+{% endblock %} 
+
+
+{% block listas %}
+<form style="padding-bottom: 15px;" action="/AppSabba/resultados_competencia/" method="GET">
+
+    <p style="padding: 15px;">
+        Ingresar el nombre del rally:
+        <input style="text-align: center;" type="text" name="nombre"> 
+    </p>
+
+    <input style="border-color: black; border-radius: 3px;
+    color: white; background-color: red; font-weight: bold;" type="submit" value="Buscar">
+
+</form>
+
+{% endblock %} 
